@@ -1,17 +1,16 @@
-import functionReducer from './_functionReducer';
+import { SWIMLANE_GET_SUCCESS } from '../actions/constants';
+import classReducer from './_classReducer';
 
-const getSwimlaneSuccess = (state, action) => {
+class SwimlaneReducer {
 
-    const swimlane = { ...action.swimlane };
+    [SWIMLANE_GET_SUCCESS](state, action) {
 
-    return {
-        ...state,
-        [action.swimlane.guid]: swimlane
-    };
-};
+        const swimlane = { ...action.swimlane };
+        return {
+            ...state,
+            [action.swimlane.guid]: swimlane
+        };
+    }
+}
 
-const swimlaneReducer = functionReducer({
-    getSwimlaneSuccess
-});
-
-export default swimlaneReducer;
+export default classReducer(SwimlaneReducer);

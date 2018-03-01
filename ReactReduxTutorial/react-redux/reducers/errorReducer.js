@@ -1,8 +1,10 @@
+import classReducer from './_classReducer';
 import { THROW_ERROR } from '../actions/constants';
 
-export default function (state = {}, action) {
-    if (action.type === THROW_ERROR) {
+class ErrorReducer {
+    [THROW_ERROR](state = {}, action) {
         console.log(action);
+        return state;
     }
-    return state;
 }
+export default classReducer(ErrorReducer);

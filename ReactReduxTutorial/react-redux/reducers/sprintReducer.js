@@ -1,17 +1,16 @@
-import functionReducer from './_functionReducer';
+import classReducer from './_classReducer';
+import { SPRINT_GET_SUCCESS } from '../actions/constants';
 
-const getSprintSuccess = (state, action) => {
-    const sprint = { ...action.sprint };
-    sprint.swimlanes = (sprint.swimlanes || []).map(it => it.guid);
+class SprintReducer {
 
-    return {
-        ...state,
-        [action.sprint.guid]: sprint
-    };
-};
+    [SPRINT_GET_SUCCESS](state, action) {
+        const sprint = { ...action.sprint };
+        sprint.swimlanes = (sprint.swimlanes || []).map(it => it.guid);
 
-const sprintReducer = functionReducer({
-    getSprintSuccess
-});
-
-export default sprintReducer;
+        return {
+            ...state,
+            [action.sprint.guid]: sprint
+        };
+    }
+}
+export default classReducer(SprintReducer);
