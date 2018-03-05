@@ -7,8 +7,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import styles from './index.less';
 
-import Sprint from './components/sprint';
-import SprintList from './components/sprintList';
+import Sprint from './components/containers/sprintContainer';
+import SprintList from './components/containers/sprintListContainer';
 import reducers from './redux';
 
 document.addEventListener("DOMContentLoaded", () => {

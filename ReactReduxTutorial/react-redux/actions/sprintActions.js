@@ -2,7 +2,7 @@ import axios from 'axios';
 import { throwError } from './errorActions';
 import { getSwimlaneSuccess } from './swimlaneActions';
 import { SPRINT_GET_SUCCESS } from './constants';
-import config from '../../react/config';
+import config from '../config';
 
 function getSprintSuccess(sprint) {
     return {

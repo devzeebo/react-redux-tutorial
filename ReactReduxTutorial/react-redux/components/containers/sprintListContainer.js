@@ -1,14 +1,12 @@
 ﻿import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
-import styles from './sprintList.less';
+import { getSprints } from '../../actions/sprintActions';
+import CardList from '../../components/cardList';
+import SprintLink from '../presentation/sprintList/sprintLink';
 
-import { getSprints } from '../actions/sprintActions';
-import CardList from '../../react/components/cardList';
-
-class SprintList extends Component {
+class SprintListContainer extends Component {
 
     static propTypes = {
         sprints: PropTypes.array,
@@ -25,13 +23,9 @@ class SprintList extends Component {
     }
 
     render() {
-
         return (
             <CardList>
-                {this.props.sprints.map(it => (
-                    <Link key={it} className={styles.sprint} to={`/sprints/${it}`}>
-                        {this.props.sprintMap[it].title}
-                    </Link>))}
+                {this.props.sprints.map(it => <SprintLink key={it} sprint={this.props.sprintMap[it]} />)}
             </CardList>
         );
     }
@@ -46,4 +40,4 @@ const mapDispatchToProps = dispatch => ({
     getSprints: () => dispatch(getSprints())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SprintList);
+export default connect(mapStateToProps, mapDispatchToProps)(SprintListContainer);

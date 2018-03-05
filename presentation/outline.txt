@@ -1,0 +1,36 @@
+What is React and Why Should I Care?
+	PPT
+
+JSX
+	Switching to HTML
+	Escaping to JS
+	Dynamically choosing a tag
+	Spread parameters
+	Ignored Values
+
+Pure Components
+	Immutable props
+
+Class Components
+	Immutable state
+	Asynchronous state
+	setState
+	Arrays/Objects
+
+Performance
+	Never mutate state - always modify (concat, Object.assign)
+	Functional vs Not
+	componentShouldUpdate
+	
+Less/Sass
+	Webpack setup
+	Basic usage
+	Modules
+	
+Routing
+	react-router-dom
+	Router
+	Route
+	Link
+	Moving route declarations out of JSX
+	

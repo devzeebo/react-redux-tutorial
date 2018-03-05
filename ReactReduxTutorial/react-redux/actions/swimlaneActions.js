@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { throwError } from './errorActions';
 import { SWIMLANE_GET_SUCCESS } from './constants';
-import config from '../../react/config';
+import config from '../config';
 
 export const getSwimlaneSuccess = (swimlane) => console.log('swimlane', swimlane) || ({
     type: SWIMLANE_GET_SUCCESS,
