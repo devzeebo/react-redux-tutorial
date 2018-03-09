@@ -8,6 +8,7 @@ module.exports = {
     plugins: ["react", "import"],
     parser: "babel-eslint",
     rules: {
+        "arrow-parens": [2, "as-needed", { requireForBlockBody: false }],
         "linebreak-style": 0,
         "function-paren-newline": 0,
         "jsx-a11y/anchor-is-valid": 0,
@@ -32,7 +33,6 @@ module.exports = {
         "no-param-reassign": [0, { props: false }],
         "quotes": [0, "double"], //[2, "double"],
         "comma-dangle": 0,
-        "arrow-parens": 0,
         "no-plusplus": 0,
         "no-bitwise": 0,
         "radix": 0,

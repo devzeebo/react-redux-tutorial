@@ -3,7 +3,7 @@ import { throwError } from './errorActions';
 import { SWIMLANE_GET_SUCCESS } from './constants';
 import config from '../config';
 
-export const getSwimlaneSuccess = (swimlane) => console.log('swimlane', swimlane) || ({
+export const getSwimlaneSuccess = swimlane => ({
     type: SWIMLANE_GET_SUCCESS,
     swimlane
 });

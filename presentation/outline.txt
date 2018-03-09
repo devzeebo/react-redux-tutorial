@@ -3,34 +3,56 @@ What is React and Why Should I Care?
 
 JSX
 	Switching to HTML
+		Any Tag; React.Fragment
 	Escaping to JS
+		{}
+	CSS	
+		styles, className
 	Dynamically choosing a tag
+		const in render
 	Spread parameters
+		<Card ...otherProps>
 	Ignored Values
+		null, undefined, false, NOT 0
+	Custom components must be PascalCase
+		
 
-Pure Components
+Functional Components
 	Immutable props
+		Don't change props! It'll break!
+		
 
 Class Components
 	Immutable state
-	Asynchronous state
+		Don't change state directly, call setState
 	setState
+	Asynchronous state
+		SetState is async, so don't rely on this.state OR this.props being updated
+		use setState((prevState, props) => ({}))		
 	Arrays/Objects
+		Never mutate state - always modify (concat, Object.assign)
 
 Performance
-	Never mutate state - always modify (concat, Object.assign)
-	Functional vs Not
-	componentShouldUpdate
-	
+	Functional vs Not - React 16 doesn't matter!
+		https://code.tutsplus.com/tutorials/stateful-vs-stateless-functional-components-in-react--cms-29541
+	componentShouldUpdate(props, nextProps)
+		default returns true
+
 Less/Sass
 	Webpack setup
-	Basic usage
+		show webpack file
+	Basic usage	
+		import in JS,
 	Modules
-	
+
 Routing
 	react-router-dom
 	Router
 	Route
 	Link
 	Moving route declarations out of JSX
+
+Ajax
+	Axios
+	Promises
 	

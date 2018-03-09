@@ -6,6 +6,7 @@ class SwimlaneReducer {
     [SWIMLANE_GET_SUCCESS](state, action) {
 
         const swimlane = { ...action.swimlane };
+        console.log(swimlane);
         return {
             ...state,
             [action.swimlane.guid]: swimlane

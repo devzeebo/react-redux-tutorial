@@ -17,7 +17,7 @@ export const getSprints = () =>
         err => dispatch(throwError(err))
     );
 
-export const getSprint = (guid) =>
+export const getSprint = guid =>
     dispatch => axios.get(`${config.apiHost}/api/sprints/${guid}`).then(
         res => {
             dispatch(getSprintSuccess(res.data));

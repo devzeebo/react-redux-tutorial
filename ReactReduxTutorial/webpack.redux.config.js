@@ -42,14 +42,14 @@ module.exports = {
             test: /\.less$/,
             use: [
               {
-                loader: "style-loader"
+                loader: "style-loader" // creates style nodes from js strings
               },
               {
-                loader: "css-loader",
-                options: { modules: true, localIdentName: "[local]-[hash:base64:4]" }
+                loader: "css-loader", // translates css into a CommonJS module
+                options: { modules: true, localIdentName: "[local]-[hash:base64:4]", camelCase: true }
               },
               {
-                loader: "less-loader"
+                loader: "less-loader" // compiles less to css
               }
             ]
           }

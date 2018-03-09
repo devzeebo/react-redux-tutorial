@@ -1,18 +1,18 @@
-import React from 'react';                              // imports
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './sprint.less';
 
 import SwimlanePreview from './swimlanePreview';
 import { date } from '../../../helpers/formatters';
-import Card from '../../card';
+import Card from '../general/card';
 
-const Sprint = props => (                     // Component Declaration. Just a function!
-    <Card>                                    {/*custom component*/}
-        <section className={styles.sprint}>   {/*since class is a reserved word: className*/}
+const Sprint = ({ sprint, swimlanes }) => (
+    <Card>
+        <section className={styles.sprint}>
             <header>
-                <span>{props.sprint.title}</span>   {/*passed in by what uses this component*/}
-                <span>{date(props.sprint.sprintStart, 'MMM DD')}</span>  {/*just a function that returns a string*/}
+                <span>{sprint.title}</span>
+                <span>{date(sprint.sprintStart, 'MMM DD')}</span>
             </header>
             <div className={styles.sprintBody}>
                 <div className={[styles.swimlane, styles.headerRow].join(' ')}>
@@ -27,15 +27,13 @@ const Sprint = props => (                     // Component Declaration. Just a f
                         </span>
                     </div>
                 </div>
-                {/*standard Javascript functions!*/}
-                {props.swimlanes.map((it, idx) => <SwimlanePreview key={idx} swimlane={it} />)}
+                {swimlanes.map((it, idx) => <SwimlanePreview key={idx} sprintGuid={sprint.guid} swimlane={it} />)}
             </div>
         </section>
     </Card>
 );
-// Runtime binding checking
 Sprint.prototype.propTypes = {
     sprint: PropTypes.object.isRequired,
     swimlanes: PropTypes.array.isRequired
 };
-export default Sprint; // ES6 export
+export default Sprint;

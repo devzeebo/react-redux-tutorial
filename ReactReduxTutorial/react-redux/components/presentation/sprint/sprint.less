@@ -11,10 +11,10 @@
         text-transform: uppercase;
     }
 
-    .sprintBody {
-        margin-top: 2em;
+    .sprint-body {
+        margin: 2em -1em 0 -1em;
             
-        .headerRow {
+        .header-row {
             align-items: flex-end;
             margin-bottom: 1em;
             border-bottom: 1px solid #eee;
@@ -38,12 +38,18 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            padding: 1em;
 
-            &:not(:last-child) {
-                margin-bottom: 1em;
+            &, &:active {
+                text-decoration: none;
+                color: black;
             }
 
-            .taskList {
+            &:not(.header-row):hover {
+                background-color: #ccc;
+            }
+
+            .task-list {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;

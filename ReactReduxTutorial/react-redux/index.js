@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import styles from './index.less';
 
+import Board from './components/containers/boardContainer';
 import Sprint from './components/containers/sprintContainer';
 import SprintList from './components/containers/sprintListContainer';
 import reducers from './redux';
@@ -22,7 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div className={styles.container}>
                     <Switch>
                         <Route exact path="/" component={SprintList} />
-                        <Route path="/sprints/:guid" component={Sprint} />
+                        <Route exact path="/sprints/:guid" component={Sprint} />
+                        <Route exact path="/sprints/:sprintGuid/:guid" component={Board} />
                     </Switch>
                 </div>
             </Router>

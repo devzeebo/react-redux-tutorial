@@ -1,20 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import styles from './sprint.less';
 
-const SwimlanePreview = props => (
-    <div className={styles.swimlane}>
-        <span>{props.swimlane.title}</span>
+
+const SwimlanePreview = ({ sprintGuid, swimlane }) => (
+    <Link className={styles.swimlane} to={`/sprints/${sprintGuid}/${swimlane.guid}`}>
+        <span>{swimlane.title}</span>
         <span className={styles.taskList}>
-            <span>{props.swimlane.tasksToDo}</span>
-            <span>{props.swimlane.tasksInProgress}</span>
-            <span>{props.swimlane.tasksInVerify}</span>
-            <span>{props.swimlane.tasksDone}</span>
+            <span>{swimlane.tasksToDo}</span>
+            <span>{swimlane.tasksInProgress}</span>
+            <span>{swimlane.tasksInVerify}</span>
+            <span>{swimlane.tasksDone}</span>
         </span>
-    </div>
+    </Link>
 );
 SwimlanePreview.prototype.propTypes = {
+    sprintGuid: PropTypes.string.isRequired,
     swimlane: PropTypes.object.isRequired
 };
 

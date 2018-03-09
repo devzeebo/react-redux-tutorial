@@ -7,4 +7,5 @@ class ErrorReducer {
         return state;
     }
 }
+
 export default classReducer(ErrorReducer);

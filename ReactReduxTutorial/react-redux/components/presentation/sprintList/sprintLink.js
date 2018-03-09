@@ -4,9 +4,13 @@ import { Link } from 'react-router-dom';
 
 import styles from './sprintList.less';
 
-const SprintLink = props => (
-    <Link className={styles.sprint} to={`/sprints/${props.sprint.guid}`}>
-        {props.sprint.title}
+import Card from '../general/card';
+
+const SprintLink = ({ sprint }) => (
+    <Link className={styles.sprint} to={`/sprints/${sprint.guid}`}>
+        <Card>
+            {sprint.title}
+        </Card>
     </Link>
 );
 

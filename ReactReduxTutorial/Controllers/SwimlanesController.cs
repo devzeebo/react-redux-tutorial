@@ -21,9 +21,23 @@ namespace ReactReduxTutorial.Controllers
         [HttpGet, Route("{guid}")]
         public async Task<ActionResult> Get(Guid guid)
         {
-            var swimlane = await _db.Swimlanes.Where(it => it.Guid == guid).FirstOrDefaultAsync();
+            var swimlane = await _db.Swimlanes
+                                    .Where(it => it.Guid == guid)
+                                    .Select(it => new
+                                    {
+                                        it.Guid,
+                                        it.Title,
+                                        Tasks = it.Tasks.Select(task => new
+                                        {
+                                            task.Guid,
+                                            task.Title,
+                                            task.Description,
+                                            task.Status
+                                        }).ToList()
+                                    })
+                                    .FirstOrDefaultAsync();
 
-            if (swimlane == default(Swimlane))
+            if (swimlane == null)
             {
                 return NotFound();
             }
