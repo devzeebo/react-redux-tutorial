@@ -21,7 +21,7 @@ module.exports = {
         "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
         "indent": 0,
         "react/jsx-indent": 0,
-        "no-debugger": 1,
+        "no-debugger": 0,
         "no-restricted-syntax": 0,
         "no-tabs": 0,
         "no-mixed-operators": [2, { "allowSamePrecedence": true }],
@@ -36,7 +36,8 @@ module.exports = {
         "no-plusplus": 0,
         "no-bitwise": 0,
         "radix": 0,
-        "padded-blocks": 0
+        "padded-blocks": 0,
+        "react/prop-types": 0
     },
     env: {
         browser: true

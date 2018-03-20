@@ -32,7 +32,7 @@ const Sprint = ({ sprint, swimlanes }) => (
         </section>
     </Card>
 );
-Sprint.prototype.propTypes = {
+Sprint.propTypes = {
     sprint: PropTypes.object.isRequired,
     swimlanes: PropTypes.array.isRequired
 };

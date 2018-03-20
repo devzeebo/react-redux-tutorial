@@ -14,7 +14,7 @@ const SprintLink = ({ sprint }) => (
     </Link>
 );
 
-SprintLink.prototype.propTypes = {
+SprintLink.propTypes = {
     sprint: PropTypes.object.isRequired
 };
 

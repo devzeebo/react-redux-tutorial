@@ -1,0 +1,32 @@
+{ name: 'Bear', breed: 'German Shepherd' }
+
+2. Array map!
+{pets.map(it => <li>{it.name}</li>)}
+2a. Key
+
+3. props
+const Pet = props => {
+    console.log(props);
+    return <li>{props.name}</li>;
+};
+{pets.map(it => <Pet key={it.name} name={it.name} />)}
+
+4. JSX Spread
+...it
+{ name: 'Havoc', breed: 'Black Lab' },
+{ name: 'Lilah', breed: 'Border Collie', conditions: ['heartworm'] },
+{ name: 'Bear', breed: 'German Shepherd', conditions: [] }
+
+5. ES6 deconstructing
+({ name, breed })
+const Pet = ({ name, breed }) => (
+    <li>{name} is a {breed}</li>;
+);
+
+6. Ignoring elements
+const Pet = ({ name, breed, conditions }) => (
+    <li>
+        <span>{name} is a {breed}.</span>
+        {conditions && <span> {name} has {conditions.join(', ')}</span>}
+    </li>
+);

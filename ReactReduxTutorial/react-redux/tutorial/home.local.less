@@ -1,0 +1,26 @@
+.twoColumns {
+    display: flex;
+
+    nav {
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 1px 1px 5px #333;
+
+        a {
+            padding: 1em;
+            color: black;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            &.activeNav {
+                background-color: #ccc;
+            }
+        }
+    }
+
+    .content {
+        flex: 1 0 0;
+        margin-left: 20px;
+    }
+}

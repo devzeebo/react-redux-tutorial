@@ -3,7 +3,7 @@ const webpack = require("webpack");
 
 module.exports = {
   entry: {
-    "react-redux": "./index.js",
+    "react-redux": "./tutorial/index.js",
   },
   output: {
     pathinfo: true,
@@ -40,6 +40,7 @@ module.exports = {
           },
           {
             test: /\.less$/,
+            exclude: /\.global\.less$/,
             use: [
               {
                 loader: "style-loader" // creates style nodes from js strings
@@ -47,6 +48,21 @@ module.exports = {
               {
                 loader: "css-loader", // translates css into a CommonJS module
                 options: { modules: true, localIdentName: "[local]-[hash:base64:4]", camelCase: true }
+              },
+              {
+                loader: "less-loader" // compiles less to css
+              }
+            ]
+          },
+          {
+            test: /\.global\.less$/,
+            use: [
+              {
+                loader: "style-loader" // creates style nodes from js strings
+              },
+              {
+                loader: "css-loader", // translates css into a CommonJS module
+                options: { camelCase: true }
               },
               {
                 loader: "less-loader" // compiles less to css

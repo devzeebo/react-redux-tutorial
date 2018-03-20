@@ -16,7 +16,7 @@ const SwimlanePreview = ({ sprintGuid, swimlane }) => (
         </span>
     </Link>
 );
-SwimlanePreview.prototype.propTypes = {
+SwimlanePreview.propTypes = {
     sprintGuid: PropTypes.string.isRequired,
     swimlane: PropTypes.object.isRequired
 };

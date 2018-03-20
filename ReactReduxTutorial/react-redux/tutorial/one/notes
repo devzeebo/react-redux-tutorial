@@ -1,0 +1,9 @@
+1. Convert to ES6 func
+
+2. Escaping JSX
+const message = 'Hello World';
+{message}
+
+3. Styling
+import styles from './one.global.less'; // eslint-disable-line
+import styles from './one.less'; // eslint-disable-line
