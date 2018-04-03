@@ -7,8 +7,9 @@ module.exports = {
   },
   output: {
     pathinfo: true,
-    path: path.join(__dirname, "wwwroot", "js"),
-    filename: "[name].js"
+    path: path.resolve(__dirname, "wwwroot", "js"),
+    filename: "[name].js",
+    publicPath: "js/"
   },
   module: {
     strictExportPresence: true,
@@ -70,6 +71,16 @@ module.exports = {
             ]
           }
         ]
+      },
+      {
+        test: /\.webp$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            publicPath: '/images/',
+            outputPath: path.resolve(__dirname, 'wwwroot', 'images')
+          }
+        }
       }
     ]
   },

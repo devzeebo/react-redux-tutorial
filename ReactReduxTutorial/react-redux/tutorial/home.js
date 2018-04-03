@@ -2,8 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 
 import styles from './home.local.less';
-import One from './one/one';
-import Two from './two/two';
+import One from './_01/one';
+import Two from './_02/two';
+import Three from './_03/three';
 
 const Home = () => (
     <Router>
@@ -17,7 +18,7 @@ const Home = () => (
                 <Switch>
                     <Route path="/one" component={One} />
                     <Route path="/two" component={Two} />
-                    <Route path="/three" component={() => <h1>Three</h1>} />
+                    <Route path="/three" component={Three} />
                 </Switch>
             </div>
         </div>

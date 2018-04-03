@@ -6,5 +6,9 @@ import Home from './home';
 document.addEventListener("DOMContentLoaded", () => {
 
     const target = document.getElementById('app');
-    ReactDOM.render(<Home />, target);
+    if (target) {
+        ReactDOM.render(<Home />, target);
+    } else {
+        console.warn('tried to load and failed :(');
+    }
 });

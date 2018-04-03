@@ -25,6 +25,7 @@ devDependencies:
   eslint-plugin-jsx-a11y: 6.0.3
   eslint-plugin-react: 7.7.0
   estraverse: 4.2.0
+  file-loader: 1.1.11
   less: 3.0.1
   less-loader: 4.0.5
   style-loader: 0.20.2
@@ -157,6 +158,15 @@ packages:
       ajv: ^6.0.0
     resolution:
       integrity: sha1-rCsnk5xUPpXSwG5/f1wnvkqlQ74=
+  /ajv-keywords/3.1.0/ajv@6.4.0:
+    dependencies:
+      ajv: 6.4.0
+    dev: true
+    id: registry.npmjs.org/ajv-keywords/3.1.0
+    peerDependencies:
+      ajv: ^6.0.0
+    resolution:
+      integrity: sha1-rCsnk5xUPpXSwG5/f1wnvkqlQ74=
   /ajv/4.11.8:
     dependencies:
       co: 4.6.0
@@ -182,6 +192,15 @@ packages:
     dev: true
     resolution:
       integrity: sha1-l41Zf7wrfQ5aXD3esUmmgvKr+g4=
+  /ajv/6.4.0:
+    dependencies:
+      fast-deep-equal: 1.1.0
+      fast-json-stable-stringify: 2.0.0
+      json-schema-traverse: 0.3.1
+      uri-js: 3.0.2
+    dev: true
+    resolution:
+      integrity: sha1-06/3jpJ3VJdx2vAWTP9ISCt1T8Y=
   /align-text/0.1.4:
     dependencies:
       kind-of: 3.2.2
@@ -2672,6 +2691,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-liVqO8l1WV6zbYLpkp0GDYk0Of8=
+  /fast-deep-equal/1.1.0:
+    dev: true
+    resolution:
+      integrity: sha1-wFNHeBfIa1HaqFPIHgWbcz0CNhQ=
   /fast-json-stable-stringify/2.0.0:
     dev: true
     resolution:
@@ -2728,6 +2751,17 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-w5KZDD5oR4PYOLjISkXYoEhFg2E=
+  /file-loader/1.1.11:
+    dependencies:
+      loader-utils: 1.1.0
+      schema-utils: 0.4.5
+    dev: true
+    engines:
+      node: '>= 4.3 < 5.0.0 || >= 5.10'
+    peerDependencies:
+      webpack: ^2.0.0 || ^3.0.0 || ^4.0.0
+    resolution:
+      integrity: sha512-TGR4HU7HUsGg6GCOPJnFk06RhWgEWFLAGWiT6rcD+GRC2keU3s9RGJ+b3Z6/U73jwwNb2gKLJ7YCrp+jvU4ALg==
   /filename-regex/2.0.1:
     dev: true
     engines:
@@ -5117,6 +5151,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-wNWmOycYgArY4esPpSachN1BhF4=
+  /punycode/2.1.0:
+    dev: true
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha1-X4Y+3Im5bbCQdLrXlHvwkFbKTn0=
   /q/1.5.1:
     dev: true
     engines:
@@ -5605,8 +5645,8 @@ packages:
       integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
   /schema-utils/0.4.5:
     dependencies:
-      ajv: 6.1.1
-      ajv-keywords: /ajv-keywords/3.1.0/ajv@6.1.1
+      ajv: 6.4.0
+      ajv-keywords: /ajv-keywords/3.1.0/ajv@6.4.0
     dev: true
     engines:
       node: '>= 4.8.0 || >= 6.9.0 || >= 8.9.0'
@@ -6352,6 +6392,12 @@ packages:
       node: '>=4 <=9'
     resolution:
       integrity: sha512-fCmij7T5LnwUme3dbnVSejvOHHlARjB3ikJFwgZfz386pHmf/gueuTLRFU94FZEaeCLlbQrweiUU700gG41tUw==
+  /uri-js/3.0.2:
+    dependencies:
+      punycode: 2.1.0
+    dev: true
+    resolution:
+      integrity: sha1-+QuFhQf4HepNz7s8TD2/orVX+qo=
   /urix/0.1.0:
     dev: true
     resolution:
@@ -6720,6 +6766,7 @@ specifiers:
   eslint-plugin-jsx-a11y: ^6.0.3
   eslint-plugin-react: ^7.6.1
   estraverse: ^4.2.0
+  file-loader: ^1.1.11
   less: ^3.0.1
   less-loader: ^4.0.5
   moment: ^2.20.1

@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "redux": "webpack-dev-server --color --config webpack.redux.config.js"
+    "redux": "webpack-dev-server --color --config webpack.redux.config.js",
+    "redux:build": "webpack --config webpack.redux.config.js"
   },
   "author": "",
   "license": "MIT",
@@ -37,6 +38,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
     "estraverse": "^4.2.0",
+    "file-loader": "^1.1.11",
     "less": "^3.0.1",
     "less-loader": "^4.0.5",
     "style-loader": "^0.20.1",
